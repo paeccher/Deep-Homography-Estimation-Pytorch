@@ -102,7 +102,6 @@ class HomographyDataset(utils.data.Dataset):
         for point in four_points:
             perturbed_four_points.append( (point[0] + random.randint(-self.rho,self.rho), point[1] + random.randint(-self.rho,self.rho)) )
 
-
         H = cv2.getPerspectiveTransform( np.float32(four_points), np.float32(perturbed_four_points) )
         H_inverse = inv(H)
 

@@ -10,7 +10,7 @@ import time
 
 
 def parseArgs():
-    parser = argparse.ArgumentParser(description='Deep Homography Estimation in Pytorch')
+    parser = argparse.ArgumentParser()
     parser.add_argument('--epochs', help='number of epochs to train', default=50, type=int)
     parser.add_argument('--lr', help='learning rate', default='0.005', type=float)
     parser.add_argument('--momentum', default='0.9', type=float)
@@ -19,7 +19,7 @@ def parseArgs():
     parser.add_argument('--batch_size', help='batch size', default='64',type=int)
     parser.add_argument('--data_year', help='the version of MS-COCO dataset used. Default is "2014"', default="2014", type=str)
     parser.add_argument('--noise', help='the noise to use when generating data', default='Vanilla', choices=['Vanilla', 'Blur5', 'Blur10', 'Compression', "Gaussian", "S&P", "All"])
-    args = parser.parse_args(args=[])
+    args = parser.parse_args()
     return args
 
 
